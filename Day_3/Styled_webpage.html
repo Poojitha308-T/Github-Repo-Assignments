@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                font-family:'Times New Roman';
+                background: aliceblue;
+                text-align: center;
+            }
+            header{
+                border: solid black 3px;
+                padding: 5px;
+                text-align: center;
+            }
+            
+            a:hover{
+                text-decoration: underline !important;
+            }
+            img{
+                border-radius: 50%;
+                box-shadow: inset;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            table{
+                border-collapse: collapse;
+                margin: auto;
+            }
+            td,th{
+                border: 1px solid black;
+                padding: 8px;
+            }
+            tr:nth-child(even){
+                background-color: "#f2f2f2";
+            }
+            tr:nth-child(odd){
+                background-color: "#ffffff";
+            }
+            .btn{
+                background-color: aqua;
+                color: red;
+                padding: 8px;
+            }
+            .btn:hover{
+                background-color: blue;
+            }
+            p{
+                text-align: justify;
+                color: darkgray;
+                border: 2px solid;
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+        <h1 style="background-color: lightgray; color: darkblue; font-size: 40px">
+            Welcome to My Webpage
+        </h1>
+        <h2 style="color: green; font-size: 28px;">
+            <b>Learning Web Development</b>
+        </h2>
+        <a href="#home" style="text-decoration: none;">Home</a>&emsp; &emsp;
+        <a href="#about"  style="text-decoration: none;">About</a>&emsp; &emsp;
+        <a href="#contact"  style="text-decoration: none;">Contact</a>&emsp; &emsp;
+    </header><br>
+    <img src="https://cdn.pixabay.com/photo/2015/06/19/20/13/sunset-815270_640.jpg" width="400px" ><br><br>
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Service A</td>
+            <td>Provides customer support and assistance.</td>
+        </tr>
+        <tr>
+            <td>Service B</td>
+            <td>Handles product delivery and shipping.</td>
+        </tr>
+        <tr>
+            <td>Service C</td>
+            <td>Manages billing and payments.</td>
+        </tr>
+    </table><br><br>
+    <button class="btn">Learn More</button><br><br>
+    <p>Service A focuses on offering customer support and assistance to help address client concerns. Service B is responsible for managing product delivery and shipping to ensure items reach customers efficiently. Service C handles billing and payment processes, making sure financial transactions are organized and properly managed.</p>
+    <form>
+        <label>Name</label>
+        <input type="text" value="name">
+        <label>Email</label>
+        <input type="email" value="email">
+        <button type="submit">Submit</button>
+    </form>
+    <footer>
+        <p style="background-color: darkgrey; font-size: smaller; text-align: center; color:black">© 2025 Poojitha. Unauthorized use or duplication is prohibited.</p>
+    </footer>
+    </body>
+</html>
