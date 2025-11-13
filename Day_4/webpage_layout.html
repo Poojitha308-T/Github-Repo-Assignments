@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+            h2{
+                text-align: center;
+            }
+            .container{
+                background-color: aquamarine;
+            }
+            nav ul{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 10px 20px;
+                margin: 0;
+                gap: 20px;
+            }
+            ul li{
+                display: flex;
+                background-color: aquamarine;
+                padding: 10px ;
+                margin: 0;
+                justify-content: center;
+            }
+            main p{
+                font-size: 16px;
+                line-height: 1.6;
+                color:blueviolet
+            }
+            nav>ul>li{
+                display: inline;
+                margin-right: 15px;
+                border-bottom: 2px solid black;
+            }
+            nav+h2{
+                color:chartreuse;
+                font-size: 24px;
+            }
+            article h3~p{
+                font-style: italic;
+                color:cadetblue ;
+            }
+            footer{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+        </div>
+        <main>
+            <h2>Welcome to Masai School</h2>
+            <article>
+                <h3>DSA Course</h3>
+                <p>The DSA course at Masai School helps students build a strong foundation in problem-solving and programming logic. Through hands-on practice with data structures like arrays, linked lists, stacks, queues, and trees, learners gain the skills to write efficient algorithms and optimize their code. This course prepares students to tackle real-world coding challenges and perform well in technical interviews.</p>
+            </article>
+            <article>
+                <h3>Full Stack Development</h3>
+                <p>The Full Stack Development course at Masai School teaches students how to build complete web applications from start to finish. It covers both front-end and back-end technologies, including HTML, CSS, JavaScript, and databases. Students learn through practical projects that help them gain real-world coding experience and become job-ready developers.</p>
+            </article>
+        </main>
+        <aside>
+            <h2>Recent Posts</h2>
+            <ul>
+                <li>Reshaping Education in the Age of AI</li>
+                <li>Masai - The Transition for Sustainability & Innovation</li>
+                <li>Decoding the Role of a Full-Stack Developer</li>
+            </ul>
+        </aside>
+        <footer>
+            <p>© 2025 Masai School</p>
+            
+        </footer>
+    </body>
+</html>
