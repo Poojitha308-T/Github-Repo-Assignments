@@ -16,9 +16,8 @@ for(let i=5;i*i<=num;i+=6)
 }
 return true
 }
-console.log(isPrime(200))
+console.log(isPrime(17))
 console.log(isPrime(299))
-
 
 function EvenOdd(num){
     for(let i=1;i<=num;i++)
