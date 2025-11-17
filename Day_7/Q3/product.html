@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 500px;
+            height: 600px;
+            padding: 30px;
+            margin: 10px;
+            border: 3px solid grey;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .prod-image {
+            width: 100%;
+            max-height: fit-content;
+            max-height: 350px;
+        }
+        .prod-name {
+            font-size: 1.5rem;
+            font-weight: bold;            
+        }
+        .prod-desc {
+            font-size: 1rem;
+            color: #555;
+        }
+        .logo {
+            max-width: 100px;
+        }
+        .container button {
+            background-color: #ff5722;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        .container button:hover {
+            background-color: #f15a2c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/w/x/h/-original-imahfa7xspmxemvj.jpeg" alt="Samsung smartwatch" class="prod-image">
+        <h3 class="prod-name">SAMSUNG Galaxy Watch6 LTE</h3>
+        <p class="prod-desc">Graphite Strap, 44mm</p>
+        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Logo" class="logo">
+        <button type="button">Buy Now</button>
+    </div>
+</body>
+</html>
