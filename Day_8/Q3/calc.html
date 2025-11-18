@@ -1,40 +1,78 @@
 <html>
     <head>
         <style>
-            h2{
+            h1{
                 color: green;
+                text-align: center;
+            }
+            body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 40px;
             }
             .c1{
-                background-color: #fff;
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
             }
-            .container{
+            #display{
+                width: 100%;
+                height: 50px;
+                margin-bottom: 15px;
+                padding: 10px;
+                text-align: right;
+                border-radius: 10px;
+            }
+            .buttons{
                 display: grid;
-                gap:10px;
+                grid-template-columns: repeat(4,60px);
+                gap: 10px;
             }
-
+            button{
+                height: 50px;
+                border: none;
+                font-size: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 3px 5px rgba(0,0,0,0.15);
+            }
+            .op, .eq{
+                background: black;
+                color: white;
+            }
+            .a4{
+                background: red;
+                color: white;
+            }
+            .a5{
+                background: white;
+                
+            }
+            
         </style>
     </head>
     <body>
-        <h2>Masai Calculator</h2>
+        <h1>Masai Calculator</h1>
         <div class="c1">
-        <div class="b0"></div>
-        <div class="container">
-            <div class="b1">1</div>
-            <div class="b2">2</div>
-            <div class="b3">3</div>
-            <div class="b4">+</div>
-            <div class="b5">4</div>
-            <div class="b6">5</div>
-            <div class="b7">6</div>
-            <div class="b8">-</div>
-            <div class="b9">7</div>
-            <div class="a1">8</div>
-            <div class="a2">9</div>
-            <div class="a3">%</div>
-            <div class="a4">C</div>
-            <div class="a5">0</div>
-            <div class="a6">=</div>
-            <div class="a7">/</div>            
+        <input type="text" id="display" readonly/>
+        <div class="buttons">
+            <button class="b1">1</button>
+            <button class="b2">2</button>
+            <button class="b3">3</button>
+            <button class="op">+</button>
+            <button class="b5">4</button>
+            <button class="b6">5</button>
+            <button class="b7">6</button>
+            <button class="op">-</button>
+            <button class="b9">7</button>
+            <button class="a1">8</button>
+            <button class="a2">9</button>
+            <button class="op">%</button>
+            <button class="a4">C</button>
+            <button class="a5">0</button>
+            <button class="eq">=</button>
+            <button class="op">/</button>            
         </div>
         </div>
     </body>
