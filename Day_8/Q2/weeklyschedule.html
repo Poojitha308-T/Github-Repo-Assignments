@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <style>
+            h1{
+                font-size: 70;
+                font-style: 'Pacifico';
+                font-family: 'Pacifico', cursive;
+                font-weight: normal;
+                text-align: center;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(6,1fr);
+                gap: 10px;
+                border: 10px;
+                border-radius: 10px;
+                color: black;
+            }
+            .b1{
+                font-weight: bold;
+            }
+            .b2{
+                font-weight: bold;
+            }
+            .b3{
+                font-weight: bold;
+            }
+            .b4{
+                font-weight: bold;
+            }
+            .b5{
+                font-weight: bold;
+            }
+            .a1{
+                font-weight: bold;
+            }
+            .a2{
+                font-weight: bold;
+            }
+            .a3{
+                font-weight: bold;
+            }
+            .a4{
+                font-weight: bold;
+            }
+            .a5{
+                font-weight: bold;
+            }
+            .a6{
+                font-weight: bold;
+            }
+            .a7{
+                font-weight: bold;
+            }
+            .a8{
+                font-weight: bold;
+            }
+            .a9{
+                font-weight: bold;
+            }
+            .container > div:nth-child(6n+1){
+                background-color: lightblue;
+            }
+            .container > div:nth-child(6n+2), 
+            .container > div:nth-child(6n+4), 
+            .container > div:nth-child(6n+6){
+                background-color: lightpink;
+            }
+            .container > div:nth-child(6n+3), 
+            .container > div:nth-child(6n+5){
+                background-color: lightyellow;
+            }
+            .container > div:first-child {
+                background-color: transparent !important;
+                border: none;
+            }
+            .container > div{
+                border: 10px;
+                border-radius: 10px;
+                padding: 10px;
+                text-align: center;
+            }
+            .note{
+                background-color: lightblue;
+                padding: 10px;
+                border: 10px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Weekly Schedule</h1>
+        <div class="container">
+            <div></div>
+            <div class="b1">Monday</div>
+            <div class="b2">Tuesday</div>
+            <div class="b3">Wednesday</div>
+            <div class="b4">Thursday</div>
+            <div class="b5">Friday</div>
+            <div class="a1">08:00</div>
+            <div>Telugu</div>
+            <div>English</div>
+            <div>Maths</div>
+            <div>Science</div>
+            <div>Social</div>
+            <div class="a2">09:00</div>
+            <div>English</div>
+            <div>Science</div>
+            <div>Telugu</div>
+            <div>Hindi</div>
+            <div>Maths</div>
+            <div class="a3">10:00</div>
+            <div>Social</div>
+            <div>Hindi</div>
+            <div>Maths</div>
+            <div>Science</div>
+            <div>Computer</div>
+            <div class="a4">11:00</div>
+            <div>Maths</div>
+            <div>Telugu</div>
+            <div>Computer Lab</div>
+            <div>Sports</div>
+            <div>Study Hour</div>
+            <div class="a5">12:00</div>
+            <div>Lunch</div>
+            <div>Lunch</div>
+            <div>Lunch</div>
+            <div>Lunch</div>
+            <div>Lunch</div>
+            <div class="a6">13:00</div>
+            <div>Science</div>
+            <div>English</div>
+            <div>Computer</div>
+            <div>Social</div>
+            <div>Telugu</div>
+            <div class="a7">14:00</div>
+            <div>Computer</div>
+            <div>Hindi</div>
+            <div>English</div>
+            <div>Maths</div>
+            <div>Science</div>
+            <div class="a8">15:00</div>
+            <div>Hindi</div>
+            <div>Maths</div>
+            <div>Telugu</div>
+            <div>Science</div>
+            <div>Social</div>
+            <div class="a9">14:00</div>
+            <div>Maths</div>
+            <div>Social</div>
+            <div>Sports</div>
+            <div>Study Hour</div>
+            <div>Drawing</div>
+        </div>
+        <br>
+        <div class="note">Note:</div>
+    </body>
+</html>
