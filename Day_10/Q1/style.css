@@ -39,7 +39,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: aqua;
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
@@ -555,6 +555,88 @@ body {
 }
 
 @media (min-width: 1024px) {
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .hero-content {
+        gap: 4rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        max-width: 500px;
+    }
+
+    .profile-placeholder {
+        max-width: 400px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .about {
+        padding: 80px 0;
+    }
+
+    .about-content {
+        gap: 4rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+
+    .skills h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .projects {
+        padding: 80px 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-icon {
+        font-size: 4rem;
+    }
+
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact-intro {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+
+    .contact-details {
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 3rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 600px) {
     .nav-menu {
         gap: 2rem;
     }
