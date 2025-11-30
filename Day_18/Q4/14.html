@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debugging Task</title>
+</head>
+<body>
+
+  <p id="message">Original Message</p>
+  <button id="textButton">Change Text</button>
+
+  <br><br>
+
+  <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+  <button id="colorButton">Change Background</button>
+
+  <script>
+    // FIX 1: Corrected incorrect id 'massage' → 'message'
+    const para = document.querySelector('#message');
+
+    // FIX 2: document.getElementByName → Correct method: getElementById
+    const textButton = document.getElementById('textButton');
+
+    // FIX 3: addClickEventListener → Correct method: addEventListener
+    textButton.addEventListener('click', () => {
+
+      // FIX 4: contentText → Correct property: textContent
+      para.textContent = 'New Message';
+    });
+
+    const box = document.getElementById('box');
+    const colorButton = document.getElementById('colorButton');
+
+    colorButton.addEventListener('click', () => {
+      
+      // FIX 5: box.styl → Correct property: box.style
+      box.style.backgroundColor = 'blue';
+    });
+  </script>
+
+</body>
+</html>
