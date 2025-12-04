@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>JSON</title>
+</head>
+
+<body>
+    <button id="addpara">Add Paragraph</button>
+    <button id="rempara">Remove Last Paragraph</button>
+    <div id="para"></div>
+    <script>
+        const paragraph = document.getElementById("para");
+        const addpara = document.getElementById("addpara");
+        const rempara = document.getElementById("rempara");
+
+
+        addpara.addEventListener("click", function() {
+            const p = document.createElement("p");
+            p.textContent = "This is a new paragraph";
+            paragraph.appendChild(p);
+        });
+
+        rempara.addEventListener("click", function() {
+            const lastpara = paragraph.lastElementChild;
+            if(lastpara){
+                paragraph.removeChild(lastpara);
+            }
+        });
+    </script>
+</body>
+
+</html>
