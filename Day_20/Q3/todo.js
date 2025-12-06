@@ -92,7 +92,7 @@ function deleteTask(id) {
     saveTasksToStorage(tasks);
 
     // Update UI
-    document.querySelector(li[data-id = "${id}"]).remove();
+    document.querySelector(li[data-id] = "${id}").remove();
 }
 
 // Search Tasks
