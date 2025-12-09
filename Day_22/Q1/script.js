@@ -1,6 +1,4 @@
-// ----------------------
-// Firebase Configuration
-// ----------------------
+
 const firebaseConfig = {
   apiKey: "AIzaSyAjzkkpq6B3NEv-g-YvO05sMMjPhBxn9C4",
   authDomain: "book-management-app-1cbc2.firebaseapp.com",
@@ -10,14 +8,10 @@ const firebaseConfig = {
   appId: "1:593360240420:web:03207195aece910bf9fdb1"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 
-// ----------------------
-// Render Books (Realtime)
-// ----------------------
 function renderBooks() {
   db.collection('books').onSnapshot((snapshot) => {
     const container = document.getElementById('booksContainer');
@@ -45,9 +39,6 @@ function renderBooks() {
 }
 
 
-// ----------------------
-// Add New Book
-// ----------------------
 document.getElementById('addBookForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -71,9 +62,6 @@ document.getElementById('addBookForm').addEventListener('submit', async (e) => {
 });
 
 
-// ----------------------
-// Update Author
-// ----------------------
 async function updateAuthor(id) {
   const newAuthor = prompt("Enter new author name:");
 
@@ -89,9 +77,6 @@ async function updateAuthor(id) {
 }
 
 
-// ----------------------
-// Delete Book
-// ----------------------
 async function deleteBook(id) {
   if (confirm("Are you sure you want to delete this book?")) {
     try {
@@ -102,10 +87,6 @@ async function deleteBook(id) {
   }
 }
 
-
-// ----------------------
-// View Book Details
-// ----------------------
 async function viewDetails(id) {
   try {
     const doc = await db.collection("books").doc(id).get();
@@ -121,10 +102,6 @@ async function viewDetails(id) {
   }
 }
 
-
-// ----------------------
-// Add Dummy Books (Optional)
-// ----------------------
 async function addDummyBooks() {
   const dummyBooks = [
     {
