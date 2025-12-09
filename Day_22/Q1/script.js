@@ -1,4 +1,6 @@
-// Firebase Configuration (Replace with your actual values from Firebase Console)
+// ----------------------
+// Firebase Configuration
+// ----------------------
 const firebaseConfig = {
   apiKey: "AIzaSyAjzkkpq6B3NEv-g-YvO05sMMjPhBxn9C4",
   authDomain: "book-management-app-1cbc2.firebaseapp.com",
@@ -10,18 +12,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();  // Firestore instance
+const db = firebase.firestore();
 
-// Function to render books (fetches and displays in real-time)
+
+// ----------------------
+// Render Books (Realtime)
+// ----------------------
 function renderBooks() {
   db.collection('books').onSnapshot((snapshot) => {
     const container = document.getElementById('booksContainer');
-    container.innerHTML = ''; // Clear existing cards
+    container.innerHTML = ''; 
 
     snapshot.forEach((doc) => {
       const book = doc.data();
+
       const card = document.createElement('div');
       card.className = 'book-card';
+
       card.innerHTML = `
         <img src="${book.coverImageURL}" alt="${book.title}">
         <h3>${book.title}</h3>
@@ -31,14 +38,19 @@ function renderBooks() {
         <button onclick="deleteBook('${doc.id}')">Delete</button>
         <button onclick="viewDetails('${doc.id}')">View Details</button>
       `;
+
       container.appendChild(card);
     });
   });
 }
 
-// Add new book
+
+// ----------------------
+// Add New Book
+// ----------------------
 document.getElementById('addBookForm').addEventListener('submit', async (e) => {
   e.preventDefault();
+
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const price = parseFloat(document.getElementById('price').value);
@@ -51,49 +63,68 @@ document.getElementById('addBookForm').addEventListener('submit', async (e) => {
       price,
       coverImageURL
     });
-    e.target.reset(); // Clear form
+
+    e.target.reset();  // Clear form
   } catch (error) {
-    console.error('Error adding book:', error);
+    console.error("Error adding book:", error);
   }
 });
 
-// Update author (prompt for new value)
+
+// ----------------------
+// Update Author
+// ----------------------
 async function updateAuthor(id) {
-  const newAuthor = prompt('Enter new author name:');
+  const newAuthor = prompt("Enter new author name:");
+
   if (newAuthor && newAuthor.trim()) {
     try {
-      await db.collection('books').doc(id).update({ author: newAuthor.trim() });
+      await db.collection("books").doc(id).update({
+        author: newAuthor.trim()
+      });
     } catch (error) {
-      console.error('Error updating author:', error);
+      console.error("Error updating author:", error);
     }
   }
 }
 
-// Delete book
+
+// ----------------------
+// Delete Book
+// ----------------------
 async function deleteBook(id) {
-  if (confirm('Are you sure you want to delete this book?')) {
+  if (confirm("Are you sure you want to delete this book?")) {
     try {
-      await db.collection('books').doc(id).delete();
+      await db.collection("books").doc(id).delete();
     } catch (error) {
-      console.error('Error deleting book:', error);
+      console.error("Error deleting book:", error);
     }
   }
 }
 
-// View details (simple alert; can be replaced with a modal)
+
+// ----------------------
+// View Book Details
+// ----------------------
 async function viewDetails(id) {
   try {
-    const doc = await db.collection('books').doc(id).get();
+    const doc = await db.collection("books").doc(id).get();
+
     if (doc.exists) {
       const book = doc.data();
-      alert(Title: ${book.title}\nAuthor: ${book.author}\nPrice: $${book.price}\nImage URL: ${book.coverImageURL});
+      alert(
+        `Title: ${book.title}\nAuthor: ${book.author}\nPrice: $${book.price}\nImage URL: ${book.coverImageURL}`
+      );
     }
   } catch (error) {
-    console.error('Error fetching details:', error);
+    console.error("Error fetching details:", error);
   }
 }
 
-// ---- ADD DUMMY BOOKS (run once) ----
+
+// ----------------------
+// Add Dummy Books (Optional)
+// ----------------------
 async function addDummyBooks() {
   const dummyBooks = [
     {
@@ -138,8 +169,6 @@ async function addDummyBooks() {
   }
 }
 
-// Run the function once (then remove or comment it)
-// addDummyBooks();
 
-// Initialize app
+// Start App
 renderBooks();
