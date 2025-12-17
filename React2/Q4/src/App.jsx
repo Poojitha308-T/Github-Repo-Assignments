@@ -37,7 +37,7 @@ function C({name,age}){
   )
 }
 
-export default App(){
+export default function App(){
   return(
     <div>
     <Parent/>
