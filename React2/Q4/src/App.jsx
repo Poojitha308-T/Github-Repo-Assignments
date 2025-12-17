@@ -4,8 +4,7 @@ function Parent(){
   const age = 22;
   return(
     <div>
-      <A name={name}/>
-      <A age={age}/>
+      <A name={name} age={age}/>
     </div>
   )
 }
@@ -13,8 +12,7 @@ function Parent(){
 function A({name,age}){
   return(
     <div>
-      <B name={name}/>
-      <B age={age}/>
+      <B name={name} age={age}/>
     </div>
   )
 }
@@ -22,8 +20,7 @@ function A({name,age}){
 function B({name,age}){
   return(
     <div>
-      <C name={name}/>
-      <C age={age}/>
+      <C name={name} age={age}/>
     </div>
   )
 }
