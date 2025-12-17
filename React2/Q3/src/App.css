@@ -1,0 +1,14 @@
+.container{
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.message{
+    border: 1px solid gray;
+    padding: 16px;
+    width: 240px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    
+}
