@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
+import './App.css';
 function Todos(){
     const [todos, setTodos] = useState([]);
     useEffect(()=>{
@@ -13,15 +12,6 @@ function Todos(){
     },[]);
     return(
         <>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/home">Home</Link>
-                    <Link to="/aboutus">About</Link>
-                    <Link to="/todos">Todos</Link>
-                </li>
-            </ul>
-        </nav>
         <h2>Todos</h2>
         <div className="container">
             {todos.map((todo) =>(
