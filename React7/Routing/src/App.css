@@ -1,0 +1,13 @@
+.container{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3,fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.todo-card{
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}

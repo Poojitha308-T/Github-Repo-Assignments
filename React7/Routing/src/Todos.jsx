@@ -23,7 +23,7 @@ function Todos(){
             </ul>
         </nav>
         <h2>Todos</h2>
-        <div>
+        <div className="container">
             {todos.map((todo) =>(
                 <div className="todo-card" key={todo.id}>
                     <h4>{todo.title}</h4>
