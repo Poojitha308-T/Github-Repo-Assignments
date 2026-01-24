@@ -1,0 +1,139 @@
+**Step 1: Use the Existing studentss Table**
+
+> create table studentss(id serial primary key, name text, email text, age int, course text, created_at TIMESTAMP DEFAULT current_timestamp);
+
+> insert into studentss(name, email, age, course, created_at)
+values('Poojitha', 'poojitha@gmail.com', 21, 'MCA', NOW()),
+('Divya', 'divya@gmail.com', 22, 'MCA', NOW()),
+('Meghana', 'meghana@gmail.com', 22, 'B.Sc', NOW()),
+('Sravani', 'sravani@gmail.com', 22, 'M.Tech', NOW()),
+('Hema', 'hema@gmail.com', 22, 'B.Sc', NOW()),
+('Rasi', 'rasi@gmail.com', 22, 'B.Sc', NOW()),
+('Afreen', 'afreen@gmail.com', 23, 'MCA', NOW()),
+('Mounika', 'mounika@gmail.com', 23, 'MCA', NOW());
+
+> select * from studentss
+
+**Output**
+
+| id | name     | email              | age | course | created_at                 |
+| -- | -------- | ------------------ | --- | ------ | -------------------------- |
+| 7  | Afreen   | afreen@gmail.com   | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 8  | Mounika  | mounika@gmail.com  | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 9  | Poojitha | poojitha@gmail.com | 21  | MCA    | 2026-01-24 17:20:27.226187 |
+| 10 | Divya    | divya@gmail.com    | 22  | MCA    | 2026-01-24 17:20:27.226187 |
+| 11 | Meghana  | meghana@gmail.com  | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+| 12 | Sravani  | sravani@gmail.com  | 22  | M.Tech | 2026-01-24 17:20:27.226187 |
+| 13 | Hema     | hema@gmail.com     | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+| 14 | Rasi     | rasi@gmail.com     | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+
+**Step 2: Aggregate Queries**
+
+> select COUNT(*) as total_students from studentss
+
+**Output**
+
+| total_students |
+| -------------- |
+| 8              |
+
+> select AVG(age) as average_age from studentss
+
+**Output**
+
+| average_age         |
+| ------------------- |
+| 22.1250000000000000 |
+
+> select MIN(age) as min_age, Max(age) as max_age from studentss
+
+**Output**
+
+| min_age | max_age |
+| ------- | ------- |
+| 21      | 23      |
+
+> select course, COUNT(*) as student_count from studentss GROUP BY course
+
+**Output**
+
+| course | student_count |
+| ------ | ------------- |
+| MCA    | 4             |
+| M.Tech | 1             |
+| B.Sc   | 3             |
+
+> select COUNT(*) as student_age_above20 from studentss where age>20
+
+**Output**
+
+| student_age_above20 |
+| ------------------- |
+| 8                   |
+
+**Step 3: Grouping & Filtering**
+
+> select course, COUNT(*) as student_count from studentss group by course
+
+**Output**
+
+| course | student_count |
+| ------ | ------------- |
+| MCA    | 4             |
+| M.Tech | 1             |
+| B.Sc   | 3             |
+
+> select course, COUNT(*) as student_count from studentss group by course having COUNT(*) > 1
+
+**Output**
+
+| course | student_count |
+| ------ | ------------- |
+| MCA    | 4             |
+| B.Sc   | 3             |
+
+> select course, COUNT(*) as student_count from studentss group by course order by student_count desc;
+
+**Output**
+
+| course | student_count |
+| ------ | ------------- |
+| MCA    | 4             |
+| B.Sc   | 3             |
+| M.Tech | 1             |
+
+**Step 4: Ordering & Limiting** 
+
+> select * from studentss order by created_at desc LIMIT 3;
+
+**Output**
+
+| id | name     | email              | age | course | created_at                 |
+| -- | -------- | ------------------ | --- | ------ | -------------------------- |
+| 10 | Divya    | divya@gmail.com    | 22  | MCA    | 2026-01-24 17:20:27.226187 |
+| 9  | Poojitha | poojitha@gmail.com | 21  | MCA    | 2026-01-24 17:20:27.226187 |
+| 11 | Meghana  | meghana@gmail.com  | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+
+> select * from studentss order by age desc limit 5;
+
+**Output**
+
+| id | name    | email             | age | course | created_at                 |
+| -- | ------- | ----------------- | --- | ------ | -------------------------- |
+| 8  | Mounika | mounika@gmail.com | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 7  | Afreen  | afreen@gmail.com  | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 11 | Meghana | meghana@gmail.com | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+| 12 | Sravani | sravani@gmail.com | 22  | M.Tech | 2026-01-24 17:20:27.226187 |
+| 13 | Hema    | hema@gmail.com    | 22  | B.Sc   | 2026-01-24 17:20:27.226187 |
+
+> select * from studentss where course = 'MCA' order by age desc;
+
+**Output**
+
+| id | name     | email              | age | course | created_at                 |
+| -- | -------- | ------------------ | --- | ------ | -------------------------- |
+| 7  | Afreen   | afreen@gmail.com   | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 8  | Mounika  | mounika@gmail.com  | 23  | MCA    | 2026-01-22 17:19:04.026273 |
+| 10 | Divya    | divya@gmail.com    | 22  | MCA    | 2026-01-24 17:20:27.226187 |
+| 9  | Poojitha | poojitha@gmail.com | 21  | MCA    | 2026-01-24 17:20:27.226187 |
+
